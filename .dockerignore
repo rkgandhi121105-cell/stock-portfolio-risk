@@ -1,0 +1,25 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Git metadata
+.git/
+.gitignore
+
+# Pytest and Python bytecode caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Tests & Documentation assets (unneeded in minimal runtime container)
+tests/
+.dockerignore
+*.md
+
+# macOS files
+.DS_Store
