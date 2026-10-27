@@ -1,0 +1,111 @@
+"""Portfolio Risk Analysis and Stress Testing Package.
+
+An academic financial risk engineering toolkit for Indian equity portfolios (NSE)
+inspired by Zerodha Kite's restrained, functional user experience.
+"""
+
+from portfolio_risk.config import (
+    BENCHMARK_NAME,
+    BENCHMARK_TICKER,
+    DEFAULT_INVESTMENTS,
+    DEFAULT_MAX_OPTIMAL_WEIGHT,
+    DEFAULT_PERIOD_YEARS,
+    DEFAULT_TICKERS,
+    MAX_HOLDINGS,
+    MIN_HOLDINGS,
+    PREDEFINED_MARKET_SHOCKS,
+    SUPPORTED_PERIODS,
+    TRADING_DAYS_PER_YEAR,
+    VOLATILITY_THRESHOLDS,
+)
+from portfolio_risk.data import (
+    DataFetchError,
+    InsufficientDataError,
+    fetch_benchmark_prices,
+    fetch_historical_prices,
+    fetch_portfolio_and_benchmark,
+)
+from portfolio_risk.metrics import (
+    MetricSummary,
+    allocate_whole_rupees,
+    analyze_portfolio,
+    calculate_annualized_volatility,
+    calculate_beta,
+    calculate_buy_and_hold_portfolio_value,
+    calculate_cagr,
+    calculate_correlation_matrix,
+    calculate_daily_returns,
+    calculate_diversification_ratio,
+    calculate_drawdown_series,
+    calculate_equal_weight_portfolio,
+    calculate_hhi,
+    calculate_max_drawdown,
+    calculate_portfolio_daily_returns,
+    calculate_portfolio_weights,
+    classify_risk,
+)
+from portfolio_risk.optimization import (
+    OptimizationError,
+    OptimizationResult,
+    check_optimization_feasibility,
+    optimize_minimum_variance,
+)
+from portfolio_risk.stress_testing import (
+    StressScenarioResult,
+    format_stress_results_table,
+    run_stress_testing,
+)
+from portfolio_risk.validation import (
+    PortfolioValidationError,
+    normalize_ticker,
+    validate_portfolio_inputs,
+    validate_ticker_format,
+)
+
+__all__ = [
+    "BENCHMARK_NAME",
+    "BENCHMARK_TICKER",
+    "DEFAULT_TICKERS",
+    "DEFAULT_INVESTMENTS",
+    "DEFAULT_PERIOD_YEARS",
+    "DEFAULT_MAX_OPTIMAL_WEIGHT",
+    "MIN_HOLDINGS",
+    "MAX_HOLDINGS",
+    "PREDEFINED_MARKET_SHOCKS",
+    "SUPPORTED_PERIODS",
+    "TRADING_DAYS_PER_YEAR",
+    "VOLATILITY_THRESHOLDS",
+    "PortfolioValidationError",
+    "DataFetchError",
+    "InsufficientDataError",
+    "MetricSummary",
+    "OptimizationResult",
+    "OptimizationError",
+    "StressScenarioResult",
+    "normalize_ticker",
+    "validate_ticker_format",
+    "validate_portfolio_inputs",
+    "fetch_historical_prices",
+    "fetch_benchmark_prices",
+    "fetch_portfolio_and_benchmark",
+    "calculate_portfolio_weights",
+    "allocate_whole_rupees",
+    "calculate_daily_returns",
+    "calculate_buy_and_hold_portfolio_value",
+    "calculate_portfolio_daily_returns",
+    "calculate_annualized_volatility",
+    "calculate_cagr",
+    "calculate_drawdown_series",
+    "calculate_max_drawdown",
+    "calculate_beta",
+    "calculate_hhi",
+    "calculate_correlation_matrix",
+    "calculate_diversification_ratio",
+    "classify_risk",
+    "calculate_equal_weight_portfolio",
+    "analyze_portfolio",
+    "check_optimization_feasibility",
+    "optimize_minimum_variance",
+    "run_stress_testing",
+    "format_stress_results_table",
+]
